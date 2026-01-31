@@ -1,2 +1,2 @@
-# PlaywrightPractive
+# PlaywrightPractice
 Tests
