@@ -1,6 +1,6 @@
 const {expect} = require('@playwright/test')
 import { Page } from "@playwright/test";
-import {inventoryPageUrl, mainPageUrl} from "../Helper/utils";
+import {inventoryPageUrl, mainPageUrl} from "../helper/Endpoint.json";
 import Sidebar from "./sidebar";
 
 export default class LoginPage extends Sidebar{

@@ -1,8 +1,6 @@
 import InventoryPage from "../pages/inventory.page";
 import { test, expect } from '@playwright/test';
-import { storageStatePath, inventoryPageUrl } from '../Helper/utils';
-
-test.use({ storageState: storageStatePath });
+import {inventoryPageUrl} from '../helper/Endpoint.json';
 
 let inventoryPage: InventoryPage;
 
@@ -10,7 +8,7 @@ test.beforeEach(async ({ page }) => {
    inventoryPage = new InventoryPage(page);
 });
 
-test.describe('Cart proccess via inventory page', () => {
+test.describe('Cart process via inventory page', () => {
 
    test('add to Cart', async () => {
 

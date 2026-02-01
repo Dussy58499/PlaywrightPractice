@@ -16,6 +16,9 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+    /* Setup for autologin */
+  globalSetup : require.resolve('./tests/global-setup.ts'),
+
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
@@ -26,11 +29,12 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'],['github']],
+  reporter: [['html'], ['github']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-     baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL,
+    storageState: process.env.STORAGE_STATE_PATH,
     /* Set screenshot and video options */
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

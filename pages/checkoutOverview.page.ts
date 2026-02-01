@@ -1,4 +1,4 @@
-import { checkoutCompletePageUrl } from "../Helper/utils";
+import { checkoutCompletePageUrl } from "../helper/Endpoint.json";
 import { Page } from "@playwright/test";
 import Sidebar from "./sidebar";
 

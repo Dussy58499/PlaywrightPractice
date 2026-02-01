@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { storageStatePath, inventoryPageUrl } from '../Helper/utils';
+import {inventoryPageUrl } from '../helper/Endpoint.json';
+import {storageStatePath} from '../helper/Credentials.ts';
 import Cartpage from "../pages/cart.page";
 import InventoryPage from "../pages/inventory.page";
 
@@ -13,7 +14,7 @@ test.beforeEach(async ({ page }) => {
 
 test.use({ storageState: storageStatePath });
 
-test.describe('Cart proccess via cart page', () => {
+test.describe('Cart process via cart page', () => {
 
     test('add to Cart', async () => {
         await inventoryPage.visitPage(inventoryPageUrl);

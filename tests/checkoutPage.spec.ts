@@ -1,11 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { inventoryPageUrl, storageStatePath, checkoutCompletePageUrl } from '../Helper/utils';
+import { inventoryPageUrl, checkoutCompletePageUrl } from '../helper/Endpoint.json';
 import CheckoutPage from '../pages/checkout.page';
 import InventoryPage from "../pages/inventory.page";
 import Cartpage from '../pages/cart.page';
 import CheckoutOverviewPage from '../pages/checkoutOverview.page';
-
-test.use({ storageState: storageStatePath });
 
 let inventoryPage: InventoryPage;
 let cartPage: Cartpage;

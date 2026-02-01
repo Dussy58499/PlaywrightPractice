@@ -1,0 +1,6 @@
+{
+"mainPageUrl":"/",
+"inventoryPageUrl":"/inventory.html",
+"cartPageUrl":"/cart.html",
+"checkoutCompletePageUrl":"/checkout-complete.html"
+}

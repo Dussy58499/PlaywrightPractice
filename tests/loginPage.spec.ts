@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { inventoryPageUrl, storageStatePath } from '../Helper/utils';
+import {inventoryPageUrl} from '../helper/Endpoint.json';
+import { username, password, baseURL,storageStatePath} from '../helper/Credentials';
 import LoginPage from "../pages/login.page";
-import { username, password, baseURL } from '../Helper/utilsTest';
 
 let loginPage: LoginPage;
 
@@ -10,16 +10,15 @@ test.beforeEach(async ({ page }) => {
   await loginPage.visitPage(baseURL);
 })
 
-test.describe('Log in proccess', () => {
+test.describe('Log in process', () => {
 
   test('has logo', async ({ page }) => {
     await expect(page).toHaveTitle(/Swag Labs/);
   });
 
-  test('login and save session', async ({ page }) => {
+  test('log in process', async () => {
     await loginPage.fillLoginForm(username, password);
     await loginPage.clickLogin();
     await loginPage.urlVerification(inventoryPageUrl);
-    await page.context().storageState({ path: storageStatePath })
   });
 });
