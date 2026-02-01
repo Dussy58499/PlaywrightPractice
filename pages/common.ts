@@ -7,11 +7,11 @@ export abstract class CommonPage {
         this.page = page;
     }
 
-    urlVerification = async (url: string) => {
+    urlVerification = async (url: any) => {
         expect(this.page.url()).toBe(playwrightConfig.use?.baseURL + url);
     }
 
-    visitPage = async (url: string) => {
+    visitPage = async (url: any) => {
         await this.page.goto(url);
     }
 }
