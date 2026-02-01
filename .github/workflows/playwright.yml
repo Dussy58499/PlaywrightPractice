@@ -1,4 +1,8 @@
 name: Playwright Tests
+
+permssions:
+  contents: write
+  
 on:
   push:
     branches: [ main, master ]
@@ -29,7 +33,7 @@ jobs:
         STORAGE_STATE_PATH: ${{ secrets.STORAGE_STATE_PATH }}
       run: npx playwright test
       continue-on-error: true 
-      
+
     - name: Generate Allure Report
       if: always()
       uses: simple-elf/allure-report-action@master
