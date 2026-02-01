@@ -1,8 +1,8 @@
 name: Playwright Tests
 
-permssions:
+permissions:
   contents: write
-  
+
 on:
   push:
     branches: [ main, master ]
