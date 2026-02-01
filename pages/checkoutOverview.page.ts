@@ -1,4 +1,4 @@
-import { checkoutCompletePageUrl } from "../../utils";
+import { checkoutCompletePageUrl } from "../Helper/utils";
 import { Page } from "@playwright/test";
 import Sidebar from "./sidebar";
 
@@ -7,11 +7,9 @@ export default class CheckoutOverviewPage extends Sidebar{
         super(page);
     }
 
-    //Locators
     finishBtn = () => this.page.locator('[data-test="finish"]');
     cancelBtn = () => this.page.locator('[data-test="cancel"]');
 
-    //Actions
     clickFinishBtn = async () => {
         await this.finishBtn().click();
     }

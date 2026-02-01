@@ -1,4 +1,3 @@
-import { checkoutCompletePageUrl } from "../../utils";
 import { Page } from "@playwright/test";
 import Sidebar from "./sidebar";
 
@@ -7,7 +6,6 @@ export default class CheckoutPage extends Sidebar{
         super(page);
     }
 
-    //Locators
     firstnameInput = () => this.page.locator('[data-test="firstName"]');
     lastnameInput = () => this.page.locator('[data-test="lastName"]');
     postalCodeInput = () => this.page.locator('[data-test="postalCode"]');
@@ -15,7 +13,6 @@ export default class CheckoutPage extends Sidebar{
     cancelBtn = () => this.page.locator('[data-test="cancel"]');
     errorMessage = () => this.page.locator('[data-test="error"]');
 
-//Actions
     fillCheckoutForm = async (firstName :string, lastName :string, postalCode :string) => {
         await this.firstnameInput().fill(firstName);
         await this.lastnameInput().fill(lastName);

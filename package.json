@@ -2,9 +2,11 @@
   "name": "playwrighttests",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Oleksandr Ivankiv",
   "license": "ISC",
   "description": "",
   "devDependencies": {

@@ -1,7 +1,5 @@
 import { expect, Page } from "@playwright/test";
-import { inventoryPageUrl, mainPageUrl } from "../../utils";
-import playwrightConfig from "../../../playwright.config";
-import { baseURL } from "../../utilsTest";
+import playwrightConfig from "../playwright.config";
 
 export abstract class CommonPage {
     page: Page

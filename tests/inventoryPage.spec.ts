@@ -1,27 +1,30 @@
-import InventoryPage from "./support/pages/inventory.page";
+import InventoryPage from "../pages/inventory.page";
 import { test, expect } from '@playwright/test';
-import {storageStatePath, inventoryPageUrl } from './utils';
-import Header from "./support/pages/header";
+import { storageStatePath, inventoryPageUrl } from '../Helper/utils';
 
 test.use({ storageState: storageStatePath });
 
- test('add to Cart', async ({ page }) => {
-    const inventoryPage= new InventoryPage(page);
-    const header = new Header(page);
+let inventoryPage: InventoryPage;
 
-   await inventoryPage.visitPage(inventoryPageUrl);
-   await inventoryPage.clickAddCartBtn();
-   await expect(header.cartIcon()).toHaveText('1');
+test.beforeEach(async ({ page }) => {
+   inventoryPage = new InventoryPage(page);
 });
 
- test('remove from Cart', async ({ page }) => {
-    const inventoryPage= new InventoryPage(page);
-    const header = new Header(page);
+test.describe('Cart proccess via inventory page', () => {
 
-   await inventoryPage.visitPage(inventoryPageUrl);
-   await inventoryPage.clickAddCartBtn();
-  //await expect(header.CartBadge()).toHaveText('1');//
-   await inventoryPage.clickRemoveItemBtn();
-   await expect(header.cartBadge()).not.toBeVisible();
+   test('add to Cart', async () => {
+
+      await inventoryPage.visitPage(inventoryPageUrl);
+      await inventoryPage.clickAddCartBtn();
+      await expect(inventoryPage.cartIcon()).toHaveText('1');
+   });
+
+   test('remove from Cart', async () => {
+
+      await inventoryPage.visitPage(inventoryPageUrl);
+      await inventoryPage.clickAddCartBtn();
+      await inventoryPage.clickRemoveItemBtn();
+      await expect(inventoryPage.cartBadge()).not.toBeVisible();
+   });
 });
 

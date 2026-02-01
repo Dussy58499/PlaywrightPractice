@@ -6,13 +6,11 @@ export default class Sidebar extends Header{
         super(page);
     }
     
-     //Locators
      allItemsBtn = () => this.page.locator('[data-test="inventory-sidebar-link"]');
      aboutBtn = () => this.page.locator('[data-test="about-sidebar-link"');
      logoutBtn = () => this.page.locator('[data-test="logout-sidebar-link"]');
      resetAppStateBtn = () => this.page.locator('[data-test="reset-sidebar-link"]');
 
-     //Actions
      clickAllItemsBtn = async() => {
         await this.allItemsBtn().click();
      }

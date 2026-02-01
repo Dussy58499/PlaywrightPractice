@@ -6,12 +6,10 @@ export default class Header extends CommonPage{
         super(page);
     }
 
-    //Locators
     cartIcon = () => this.page.locator('[data-test="shopping-cart-link"]');
     cartBadge = () => this.page.locator('[data-test="shopping-cart-badge"]')
     sidebarBtn = () => this.page.locator('#react-burger-menu-btn');
 
-    //Actions
     clickCartBtn = async () => {
         await this.cartIcon().click();
     }
